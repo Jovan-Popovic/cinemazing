@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed') ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,21 +25,13 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="<?php echo base_url() ?>">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url() ?>collections">Collections</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url() ?>ticket-sale">Ticket Sale</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url() ?>about-us">About Us</a>
-					</li>
+					<?php foreach (['home', 'collections', 'ticket-sale', 'about-us'] as $key => $route) : ?>
+						<li class="nav-item<?php echo ((base_url() . $route) === current_url() || ($key === 0 && base_url() === current_url()))  ? ' active' : '' ?>">
+							<a class="nav-link" href="<?php echo base_url() . ($key !== 0 ? $route : '') ?>"><?php echo ucwords(str_replace('-', ' ', $route)) ?></a>
+						</li>
+					<?php endforeach; ?>
 				</ul>
 				<form class="form-inline my-2 my-md-0">
 					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
@@ -48,4 +40,3 @@
 			</div>
 		</nav>
 	</header>
-	<div class="container-fluid">
