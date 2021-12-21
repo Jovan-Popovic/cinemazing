@@ -29,11 +29,10 @@
 				<div class="row mt-3">
 					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 						<h6 class="text-uppercase fw-bold mb-4">
-							<i class="fas fa-gem me-3"></i>Company name
+							<i class="fas fa-gem me-3"></i>Cinemazing
 						</h6>
 						<p>
-							Here you can use rows and columns to organize your footer content. Lorem ipsum
-							dolor sit amet, consectetur adipisicing elit.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam aperiam assumenda nesciunt ad placeat eos odit minus!
 						</p>
 					</div>
 					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">

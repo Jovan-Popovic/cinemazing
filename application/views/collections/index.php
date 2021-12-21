@@ -1,4 +1,7 @@
 <section class="container mt-3">
+	<p class="text-right m-0">
+		<a href="<?php echo site_url('/collections/create') ?>" class="btn btn-danger">Add New Movie</a>
+	</p>
 	<div class="row justify-content-center">
 		<?php foreach ($posts as $post) : ?>
 			<div class="mt-3 col-lg-3 col-md-4 col-sm-6 col-12">
@@ -21,8 +24,7 @@
 							<?php echo $post['available_at'] ?>
 						</li>
 					</ul>
-					<a href="#!" class="btn btn-danger">Button</a>
-
+					<a href="<?php echo site_url('/collections/' . $post['slug']) ?>" class="btn btn-danger">Read More</a>
 				</article>
 			</div>
 		<?php endforeach; ?>

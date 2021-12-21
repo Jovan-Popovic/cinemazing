@@ -1,4 +1,4 @@
-<div id="intro-example" class="text-center bg-image" style="background-image: url('<?php echo assets_url() ?>images/home/banner.png');">
+<section id="intro-example" class="text-center bg-image" style="background-image: url('<?php echo assets_url() ?>images/home/banner.png');">
 	<div class="mask p-5" style="background-color: rgba(0, 0, 0, 0.5);">
 		<div class="d-flex justify-content-center align-items-center h-100">
 			<div class="text-white">
@@ -9,8 +9,8 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="container">
+</section>
+<section class="container">
 	<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<?php foreach (range(0, 3) as $slide) : ?>
@@ -56,4 +56,15 @@
 			<span class="sr-only">Next</span>
 		</button>
 	</div>
-</div>
+</section>
+<section class="py-5">
+	<div class="container">
+		<h2 class="text-center">Discard, Spontaneity, Scan.</h2>
+		<div class="d-flex justify-content-center my-4">
+			<img class="mx-1" src="placeholder/icons/unicorn.svg" alt="">
+			<img class="mx-1" src="placeholder/icons/unicorn.svg" alt="">
+			<img class="mx-1" src="placeholder/icons/unicorn.svg" alt="">
+		</div>
+		<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora voluptatem molestiae quis deserunt, iste expedita. Placeat vero dolorum doloribus quam, et natus sequi tempora, consequuntur laudantium inventore odio reprehenderit architecto.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor commodi doloribus nam cupiditate, aut odit.</p>
+	</div>
+</section>
