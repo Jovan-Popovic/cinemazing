@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-$route['collections/create'] = 'posts/create';
-$route['collections/(:any)'] = 'posts/view/$1';
-$route['collections'] = 'posts/index';
+$route['collections/create'] = 'collections/create';
+$route['collections/update'] = 'collections/update';
+$route['collections/(:any)'] = 'collections/view/$1';
+$route['collections'] = 'collections/index';
 
 $route['(:any)'] = 'pages/view/$1';
 

@@ -357,6 +357,7 @@ template {
 	--color-primary-red: #e50914;
 }
 ::selection {
+	color: var(--color-primary-light) !important;
 	background: var(--color-primary-red) !important;
 }
 

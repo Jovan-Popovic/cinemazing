@@ -15,11 +15,11 @@
 						</p>
 					</div>
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item">
+						<li class="list-group-item text-truncate">
 							<span class="text-muted">Release Date: </span>
 							<?php echo date('d-m-Y', strtotime($post['created_at'])) ?>
 						</li>
-						<li class="list-group-item">
+						<li class="list-group-item text-truncate">
 							<span class="text-muted">Avaliable At: </span>
 							<?php echo $post['available_at'] ?>
 						</li>
