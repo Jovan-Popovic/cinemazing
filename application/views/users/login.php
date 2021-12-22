@@ -7,5 +7,7 @@
 		<input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
 		<label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
 	</div> -->
-	<button class="btn btn-danger my-4 btn-block" type="submit">Login</button>
+	<button class="btn btn-danger my-4 btn-block" type="submit">
+		<i class="fas fa-user"></i> Login
+	</button>
 </form>

@@ -7,9 +7,18 @@
 	</div>
 	<input type="text" id="defaultContactFormName" name="image_url" class="form-control mb-4" placeholder="Image URL">
 	<div class="form-group">
+		<select name="genre_id" id="" class="form-control">
+			<?php foreach ($genres as $genre) : ?>
+				<option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+	<div class="form-group">
 		<textarea class="form-control rounded-0" name="available_at" rows="3" placeholder="Movie Availability"></textarea>
 	</div>
-	<button class="btn btn-danger btn-block" type="submit">Post New Movie</button>
+	<button class="btn btn-danger btn-block" type="submit">
+		<i class="fas fa-plus-circle"></i> Post New Movie
+	</button>
 </form>
 <script>
 	ClassicEditor

@@ -17,5 +17,7 @@
 		<input type="checkbox" class="custom-control-input danger-checkbox" id="contactFormCopy">
 		<label class="custom-control-label" for="contactFormCopy">Send me a copy of this message</label>
 	</div>
-	<button class="btn btn-danger btn-block" type="submit">Send Email</button>
+	<button class="btn btn-danger btn-block" type="submit">
+		<i class="fas fa-envelope"></i> Send Email
+	</button>
 </form>

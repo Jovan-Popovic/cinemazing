@@ -29,14 +29,13 @@
 				<div class="row mt-3">
 					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 						<h6 class="text-uppercase fw-bold mb-4">
-							<i class="fas fa-gem me-3"></i>Cinemazing
+							<i class="fas fa-gem me-3"></i> Cinemazing
 						</h6>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam aperiam assumenda nesciunt ad placeat eos odit minus!
 						</p>
 					</div>
 					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-						<!-- Links -->
 						<h6 class="text-uppercase fw-bold mb-4">
 							Sponsors
 						</h6>

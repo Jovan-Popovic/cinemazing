@@ -23,6 +23,10 @@
 							<span class="text-muted">Avaliable At: </span>
 							<?php echo $post['available_at'] ?>
 						</li>
+						<li class="list-group-item text-truncate">
+							<span class="text-muted">Genre: </span>
+							<?php echo $post['name'] ?>
+						</li>
 					</ul>
 					<a href="<?php echo site_url('/collections/' . $post['slug']) ?>" class="btn btn-danger">Read More</a>
 				</article>

@@ -10,7 +10,8 @@ class Collection_model extends CI_Model
 	public function get_posts($slug = false)
 	{
 		if (!$slug) {
-			$this->db->order_by('id', 'DESC');
+			$this->db->order_by('posts.id', 'DESC');
+			$this->db->join('genres', 'genres.id = posts.genre_id');
 			$query = $this->db->get('posts');
 
 			return $query->result_array();
@@ -29,6 +30,7 @@ class Collection_model extends CI_Model
 			'title' => $this->input->post('title'),
 			'slug' => $slug,
 			'description' => $this->input->post('description'),
+			'genre_id' => $this->input->post('genre_id'),
 			'image_url' => $this->input->post('image_url'),
 			'available_at' => $this->input->post('available_at'),
 		];
@@ -44,6 +46,7 @@ class Collection_model extends CI_Model
 			'title' => $this->input->post('title'),
 			'slug' => $slug,
 			'description' => $this->input->post('description'),
+			'genre_id' => $this->input->post('genre_id'),
 			'image_url' => $this->input->post('image_url'),
 			'available_at' => $this->input->post('available_at'),
 		];
@@ -58,5 +61,13 @@ class Collection_model extends CI_Model
 		$this->db->delete('posts');
 
 		return true;
+	}
+
+	public function get_genres()
+	{
+		$this->db->order_by('name');
+		$query = $this->db->get('genres');
+
+		return $query->result_array();
 	}
 }

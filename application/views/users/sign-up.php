@@ -33,7 +33,9 @@
 		<input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
 		<label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
 	</div>
-	<button class="btn btn-danger my-4 btn-block" type="submit">Sign Up</button>
+	<button class="btn btn-danger my-4 btn-block" type="submit">
+		<i class="fas fa-sign-in-alt"></i> Sign Up
+	</button>
 	<p>By clicking
 		<em>Sign Up</em> you agree to our
 		<a href="https://policies.google.com" class="text-danger" target="_blank">terms of service</a>

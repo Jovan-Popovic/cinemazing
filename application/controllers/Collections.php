@@ -29,7 +29,11 @@ class Collections extends CI_Controller
 
 	public function create()
 	{
+		if (!$this->session->userdata('logged_in'))
+			redirect('users/login');
+
 		$data['title'] = 'Create new Movie';
+		$data['genres'] = $this->collection_model->get_genres();
 
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
@@ -51,7 +55,11 @@ class Collections extends CI_Controller
 
 	public function edit($slug = null)
 	{
+		if (!$this->session->userdata('logged_in'))
+			redirect('users/login');
+
 		$data['post'] = $this->collection_model->get_posts($slug);
+		$data['genres'] = $this->collection_model->get_genres();
 
 		if (empty($data['post']))
 			show_404();
@@ -65,6 +73,9 @@ class Collections extends CI_Controller
 
 	public function update($id)
 	{
+		if (!$this->session->userdata('logged_in'))
+			redirect('users/login');
+
 		$this->collection_model->update_post($id);
 
 		$this->session->set_flashdata('movie_updated', 'You successfully updated a movie');
@@ -74,6 +85,9 @@ class Collections extends CI_Controller
 
 	public function delete($id)
 	{
+		if (!$this->session->userdata('logged_in'))
+			redirect('users/login');
+
 		$this->collection_model->delete_post($id);
 
 		$this->session->set_flashdata('movie_deleted', 'You successfully deleted a movie');

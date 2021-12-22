@@ -371,6 +371,11 @@ template {
 
 .btn-danger {
 	color: var(--color-primary-light) !important;
+	background-color: var(--color-primary-grey) !important;
+}
+
+.btn-danger {
+	color: var(--color-primary-light) !important;
 	background-color: var(--color-primary-red) !important;
 }
 
