@@ -4,7 +4,7 @@
 	<p class="h4 mb-4">Update this Movie</p>
 	<input type="text" name="title" id="defaultContactFormName" class="form-control mb-4" placeholder="Movie Title" value="<?php echo $post['title'] ?>">
 	<div class="form-group">
-		<textarea class="form-control rounded-0" name="description" rows="3" placeholder="Movie Description"><?php echo $post['description'] ?></textarea>
+		<textarea class="form-control rounded-0" id="description" name="description" rows="3" placeholder="Movie Description"><?php echo $post['description'] ?></textarea>
 	</div>
 	<input type="text" id="defaultContactFormName" name="image_url" class="form-control mb-4" value="<?php echo $post['image_url'] ?>" placeholder="Image URL">
 	<div class="form-group">
@@ -12,3 +12,7 @@
 	</div>
 	<button class="btn btn-danger btn-block" type="submit">Update Movie</button>
 </form>
+<script>
+	ClassicEditor
+		.create(document.querySelector('#description'))
+</script>

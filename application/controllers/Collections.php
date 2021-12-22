@@ -42,6 +42,9 @@ class Collections extends CI_Controller
 			$this->load->view('templates/footer');
 		} else {
 			$this->collection_model->create_post();
+
+			$this->session->set_flashdata('movie_created', 'You successfully added a new movie');
+
 			redirect('collections');
 		}
 	}
@@ -64,12 +67,16 @@ class Collections extends CI_Controller
 	{
 		$this->collection_model->update_post($id);
 
+		$this->session->set_flashdata('movie_updated', 'You successfully updated a movie');
+
 		redirect('collections');
 	}
 
 	public function delete($id)
 	{
 		$this->collection_model->delete_post($id);
+
+		$this->session->set_flashdata('movie_deleted', 'You successfully deleted a movie');
 
 		redirect('collections');
 	}

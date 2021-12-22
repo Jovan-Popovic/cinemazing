@@ -396,20 +396,13 @@ template {
 	border-color: var(--color-primary-grey) !important;
 }
 
-.danger-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-	background-color: var(--color-primary-red) !important;
+.text-danger {
+	color: var(--color-primary-red) !important;
 }
 
-.danger-checkbox
-	.custom-control-input:checked:focus
-	~ .custom-control-label::before {
-	box-shadow: 0 0 0 1px var(--color-primary-light),
-		0 0 0 0.2rem var(--color-primary-red);
-}
-.danger-checkbox .custom-control-input:focus ~ .custom-control-label::before {
-	box-shadow: 0 0 0 1px var(--color-primary-light),
-		0 0 0 0.2rem rgba(0, 0, 0, 0.25);
-}
-.danger-checkbox .custom-control-input:active ~ .custom-control-label::before {
-	background-color: #c8ffc8;
+.alert-danger {
+	color: var(--color-primary-light) !important;
+	background-color: var(--color-primary-red) !important;
+	border-radius: 0 0 0.25rem 0.25rem !important;
+	border-color: var(--color-primary-red) !important;
 }

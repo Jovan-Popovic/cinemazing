@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="<?php echo assets_url() ?>css/normalize.css">
 	<link rel="stylesheet" href="<?php echo assets_url() ?>css/main.css">
 	<title>Cinemazing</title>
+	<script src="<?php echo assets_url() ?>js/ckeditor.min.js"></script>
 </head>
 
 <body>
@@ -35,8 +36,16 @@
 				</ul>
 				<form class="form-inline my-2 my-md-0">
 					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
-					<button class="btn btn-outline-secondary my-2 my-sm-0 ml-2" type="submit">Sign Up</button>
+					<a href="<?php echo base_url() . 'users/sign-up' ?>" class="btn btn-outline-secondary my-2 my-sm-0 ml-2" type="submit">Sign Up</a>
 				</form>
 			</div>
 		</nav>
 	</header>
+
+	<?php foreach (['user_registered', 'username_exists', 'email_exists', 'user_logged_in', 'movie_created', 'movie_updated', 'movie_deleted'] as $message) : ?>
+		<?php if ($this->session->flashdata($message)) : ?>
+			<div class="alert alert-danger" role="alert">
+				<?php echo	$this->session->flashdata($message) ?>
+			</div>
+		<?php endif; ?>
+	<?php endforeach; ?>

@@ -90,7 +90,6 @@
 			<a class="text-reset fw-bold" href="https://codeigniter.com">cinemazing.com</a>
 		</div>
 	</footer>
-
 	<script src="<?php echo assets_url() ?>js/jquery.slim.min.js"></script>
 	<script src="<?php echo assets_url() ?>js/bootstrap.bundle.min.js"></script>
 	</body>
