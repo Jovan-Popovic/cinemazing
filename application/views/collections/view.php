@@ -29,6 +29,6 @@
 		<a href="<?php echo base_url() ?>collections/edit/<?php echo $post['slug'] ?>" class="btn btn-primary pull-left">Edit Movie</a>
 		<?php echo form_open('/collections/delete/' . $post['id']) ?>
 		<input type="submit" class="btn btn-danger mt-4" value="Delete Movie">
-		</form>
+		<?php echo form_close() ?>
 	</div>
 </section>

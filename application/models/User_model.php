@@ -23,6 +23,15 @@ class User_model extends CI_Model
 		return $this->db->insert('users', $data);
 	}
 
+	public function login($email, $password)
+	{
+		$this->db->where('email', $email);
+		$this->db->where('password', $password);
+
+		$result = $this->db->get('users');
+
+		return $result->num_rows() === 1 ? $result->row(0)->id : false;
+	}
 
 	public function check_username_exists($username)
 	{

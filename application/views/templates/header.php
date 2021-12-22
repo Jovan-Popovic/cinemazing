@@ -34,18 +34,41 @@
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<form class="form-inline my-2 my-md-0">
-					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Login</button>
-					<a href="<?php echo base_url() . 'users/sign-up' ?>" class="btn btn-outline-secondary my-2 my-sm-0 ml-2" type="submit">Sign Up</a>
-				</form>
+				<?php if (!$this->session->userdata('logged_in')) : ?>
+					<a href="<?php echo base_url() . 'users/login' ?>" class="btn btn-danger my-2 my-sm-0">Login</a>
+					<a href="<?php echo base_url() . 'users/sign-up' ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Sign Up</a>
+				<?php else : ?>
+					<a href="<?php echo base_url() . 'users/logout' ?>" class="btn btn-danger my-2 my-sm-0 ml-2">Logout</a>
+				<?php endif; ?>
 			</div>
 		</nav>
 	</header>
-
-	<?php foreach (['user_registered', 'username_exists', 'email_exists', 'user_logged_in', 'movie_created', 'movie_updated', 'movie_deleted'] as $message) : ?>
+	<?php
+	$danger_data = [
+		'user_registered',
+		'user_logged_in',
+		'movie_created',
+		'movie_updated',
+		'movie_deleted'
+	];
+	$secondary_data = [
+		'username_exists',
+		'email_exists',
+		'login_failed',
+		'user_logged_out',
+	];
+	?>
+	<?php foreach ($danger_data as $message) : ?>
 		<?php if ($this->session->flashdata($message)) : ?>
-			<div class="alert alert-danger" role="alert">
+			<p class="alert alert-danger" role="alert">
 				<?php echo	$this->session->flashdata($message) ?>
-			</div>
+			</p>
+		<?php endif; ?>
+	<?php endforeach; ?>
+	<?php foreach ($secondary_data as $message) : ?>
+		<?php if ($this->session->flashdata($message)) : ?>
+			<p class="alert alert-secondary" role="alert">
+				<?php echo	$this->session->flashdata($message) ?>
+			</p>
 		<?php endif; ?>
 	<?php endforeach; ?>

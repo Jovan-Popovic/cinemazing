@@ -400,6 +400,13 @@ template {
 	color: var(--color-primary-red) !important;
 }
 
+.alert-secondary {
+	color: var(--color-primary-light) !important;
+	background-color: var(--color-primary-grey) !important;
+	border-radius: 0 0 0.25rem 0.25rem !important;
+	border-color: var(--color-primary-grey) !important;
+}
+
 .alert-danger {
 	color: var(--color-primary-light) !important;
 	background-color: var(--color-primary-red) !important;
