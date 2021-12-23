@@ -32,5 +32,9 @@
 				</article>
 			</div>
 		<?php endforeach; ?>
+		<?php if (empty($posts)) : ?>
+			<p class="text-center">No Data Found, Come Back Later</p>
+		<?php endif; ?>
+
 	</div>
 </section>

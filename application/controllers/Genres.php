@@ -14,9 +14,8 @@ class Genres extends CI_Controller
 
 	public function create()
 	{
-		if (!$this->session->userdata('logged_in')) {
+		if (!$this->session->userdata('logged_in'))
 			redirect('users/login');
-		}
 
 		$data['title'] = 'Create Genre';
 
@@ -48,9 +47,8 @@ class Genres extends CI_Controller
 
 	public function delete($id)
 	{
-		if (!$this->session->userdata('logged_in')) {
+		if (!$this->session->userdata('logged_in'))
 			redirect('users/login');
-		}
 
 		$this->genre_model->delete_genre($id);
 

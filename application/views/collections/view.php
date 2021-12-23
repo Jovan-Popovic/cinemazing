@@ -30,6 +30,32 @@
 		<button type="submit" class="btn btn-danger mt-4">
 			<i class="fas fa-trash"></i> Delete Movie
 		</button>
+		<h4 class="mt-5">Comment Section</h4>
+		<?php if ($comments) : ?>
+			<ul class="list-group text-left">
+				<?php foreach ($comments as $comment) : ?>
+					<li class="list-group-item mt-5">
+						<span class="font-weight-bold"><?php echo $comment['username'] ?></span> says: <?php echo $comment['body'] ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php else : ?>
+			<p class="text-center mt-5">No Comments To Display</p>
+		<?php endif; ?>
 		<?php echo form_close() ?>
+		<?php if ($this->session->userdata('logged_in')) : ?>
+			<h4 class="mt-5">Add a Comment</h4>
+			<?php echo form_open('comments/create/' . $post['id']) ?>
+			<input type="hidden" name="slug" value="<?php echo $post['slug'] ?>">
+			<textarea class="form-control rounded-0" id="comment" name="body" rows="3" placeholder="Write something here..."></textarea>
+			<button type="submit" class="btn btn-danger mt-4">
+				<i class="fas fa-edit"></i> Post Comment
+			</button>
+			<?php echo form_close() ?>
+		<?php endif; ?>
 	</div>
 </section>
+<script>
+	ClassicEditor
+		.create(document.querySelector('#comment'))
+</script>

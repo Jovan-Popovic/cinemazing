@@ -16,6 +16,8 @@ class Collections extends CI_Controller
 	public function view($slug = null)
 	{
 		$data['post'] = $this->collection_model->get_posts($slug);
+		$post_id = $data['post']['id'];
+		$data['comments'] = $this->comment_model->get_comments($post_id);
 
 		if (empty($data['post']))
 			show_404();
