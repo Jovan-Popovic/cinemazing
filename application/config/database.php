@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '123456',
-	'database' => 'cinemazing',
+	'hostname' => 'https://remotemysql.com',
+	'username' => 'ezg8Uadchc',
+	'password' => 'SYOaDROqCx',
+	'database' => 'ezg8Uadchc',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
