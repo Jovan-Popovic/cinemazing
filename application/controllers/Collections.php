@@ -37,7 +37,8 @@ class Collections extends CI_Controller
 
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('description', 'Description', 'required');
-		$this->form_validation->set_rules('image_url', 'Image URL', 'required');
+		if (empty($_FILES['userfile']['name']))
+			$this->form_validation->set_rules('userfile', 'Image URL', 'required');
 		$this->form_validation->set_rules('available_at', 'Available At', 'required');
 
 		if ($this->form_validation->run() === false) {
@@ -45,7 +46,24 @@ class Collections extends CI_Controller
 			$this->load->view('collections/create', $data);
 			$this->load->view('templates/footer');
 		} else {
-			$this->collection_model->create_post();
+			$config['upload_path'] = './assets/images/data/movies';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size'] = '2048';
+			$config['width'] = '2000';
+			$config['height'] = '2000';
+
+			$this->load->library('upload', $config);
+
+			if (!$this->upload->do_upload()) {
+				die('puce...');
+				$errors = ['error' => $this->upload->display_errors()];
+				$post_image = 'no-image.png';
+			} else {
+				$data = ['upload_data' => $this->upload->data()];
+				$post_image = $_FILES['userfile']['name'];
+			}
+
+			$this->collection_model->create_post($post_image);
 
 			$this->session->set_flashdata('movie_created', 'You successfully added a new movie');
 

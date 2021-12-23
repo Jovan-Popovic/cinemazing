@@ -1,8 +1,15 @@
 <section class="container mt-3">
 	<p class="text-right m-0">
-		<a href="<?php echo site_url('/collections/create') ?>" class="btn btn-danger">Add New Movie</a>
+		<a href="<?php echo site_url('/genres/create') ?>" class="btn btn-danger">Add New Genre</a>
 	</p>
-	<div class="row justify-content-center">
+	<ul class="list-group text-center">
+		<?php foreach ($genres as $genre) : ?>
+			<li class="list-group-item mt-3">
+				<a href="<?php echo site_url('/genres/collections/' . $genre['id']) ?>"><?php echo $genre['name'] ?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<!-- <div class="row justify-content-center">
 		<?php foreach ($posts as $post) : ?>
 			<div class="mt-3 col-lg-3 col-md-4 col-sm-6 col-12">
 				<article class="card">
@@ -32,5 +39,5 @@
 				</article>
 			</div>
 		<?php endforeach; ?>
-	</div>
+	</div> -->
 </section>

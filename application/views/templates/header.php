@@ -28,7 +28,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="navbar-nav mr-auto">
-					<?php foreach (['home', 'collections', 'ticket-sale', 'about-us'] as $key => $route) : ?>
+					<?php foreach (['home', 'collections', 'genres', 'ticket-sale', 'about-us'] as $key => $route) : ?>
 						<li class="nav-item<?php echo ((base_url() . $route) === current_url() || ($key === 0 && base_url() === current_url()))  ? ' active' : '' ?>">
 							<a class="nav-link" href="<?php echo base_url() . ($key !== 0 ? $route : '') ?>"><?php echo ucwords(str_replace('-', ' ', $route)) ?></a>
 						</li>
@@ -55,7 +55,8 @@
 		'user_logged_in',
 		'movie_created',
 		'movie_updated',
-		'movie_deleted'
+		'movie_deleted',
+		'genre_created',
 	];
 	$secondary_data = [
 		'username_exists',

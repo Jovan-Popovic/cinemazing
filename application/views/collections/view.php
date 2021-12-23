@@ -1,7 +1,7 @@
 <section class="py-5">
 	<div class="container text-center">
 		<h2> <?php echo $post['title'] ?></h2>
-		<img class="img-fluid my-4" src="<?php echo $post['image_url'] ?>" alt="">
+		<img class="img-fluid my-4" src="<?php echo assets_url() ?>images/data/movies/<?php echo $post['image_slug'] ?>" alt="<?php echo $post['image_slug'] ?>">
 		<div class="row mt-5 text-left">
 			<div class="col-md-4 d-flex align-items-start">
 				<div>

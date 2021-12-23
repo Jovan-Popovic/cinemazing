@@ -6,7 +6,7 @@
 	<div class="form-group">
 		<textarea class="form-control rounded-0" id="description" name="description" rows="3" placeholder="Movie Description"><?php echo $post['description'] ?></textarea>
 	</div>
-	<input type="text" id="defaultContactFormName" name="image_url" class="form-control mb-4" value="<?php echo $post['image_url'] ?>" placeholder="Image URL">
+	<input type="text" id="defaultContactFormName" name="image_slug" class="form-control mb-4" value="<?php echo $post['image_slug'] ?>" placeholder="Image URL">
 	<div class="form-group">
 		<select name="genre_id" id="" class="form-control">
 			<?php foreach ($genres as $genre) : ?>

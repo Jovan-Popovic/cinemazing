@@ -22,7 +22,7 @@ class Collection_model extends CI_Model
 		return $query->row_array();
 	}
 
-	public function create_post()
+	public function create_post($post_image)
 	{
 		$slug = url_title($this->input->post('title'));
 
@@ -31,7 +31,7 @@ class Collection_model extends CI_Model
 			'slug' => $slug,
 			'description' => $this->input->post('description'),
 			'genre_id' => $this->input->post('genre_id'),
-			'image_url' => $this->input->post('image_url'),
+			'image_slug' => $post_image,
 			'available_at' => $this->input->post('available_at'),
 		];
 
@@ -47,7 +47,7 @@ class Collection_model extends CI_Model
 			'slug' => $slug,
 			'description' => $this->input->post('description'),
 			'genre_id' => $this->input->post('genre_id'),
-			'image_url' => $this->input->post('image_url'),
+			'image_slug' => $this->input->post('image_slug'),
 			'available_at' => $this->input->post('available_at'),
 		];
 
@@ -67,6 +67,15 @@ class Collection_model extends CI_Model
 	{
 		$this->db->order_by('name');
 		$query = $this->db->get('genres');
+
+		return $query->result_array();
+	}
+
+	public function get_posts_by_genre($genre_id)
+	{
+		$this->db->order_by('posts.id', 'DESC');
+		$this->db->join('genres', 'genres.id = posts.genre_id');
+		$query = $this->db->get_where('posts', ['genre_id' => $genre_id]);
 
 		return $query->result_array();
 	}
