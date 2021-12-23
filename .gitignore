@@ -8,7 +8,6 @@ application/logs/*
 
 !application/*/.htaccess
 
-composer.lock
 /assets/images/data/movies/*
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
