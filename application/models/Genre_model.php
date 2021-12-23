@@ -18,7 +18,7 @@ class Genre_model extends CI_Model
 	{
 		$data = [
 			'name' => $this->input->post('name'),
-			// 'user_id' => $this->session->userdata('user_id')
+			'user_id' => $this->session->userdata('user_id')
 		];
 
 		return $this->db->insert('genres', $data);

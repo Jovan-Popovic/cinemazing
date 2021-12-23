@@ -5,6 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['users/sign-up'] = 'users/register';
 
 // Collections/Movies
+$route['collections/index'] = 'collections/index';
 $route['collections/create'] = 'collections/create';
 $route['collections/update'] = 'collections/update';
 $route['collections/(:any)'] = 'collections/view/$1';

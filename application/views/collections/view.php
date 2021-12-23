@@ -23,13 +23,16 @@
 				</div>
 			</div>
 		</div>
-		<a href="<?php echo base_url() ?>collections/edit/<?php echo $post['slug'] ?>" class="btn btn-primary pull-left">
-			<i class="fas fa-edit"></i> Edit Movie
-		</a>
-		<?php echo form_open('/collections/delete/' . $post['id']) ?>
-		<button type="submit" class="btn btn-danger mt-4">
-			<i class="fas fa-trash"></i> Delete Movie
-		</button>
+		<?php if ($this->session->userdata('user_id') === $post['user_id']) : ?>
+			<a href="<?php echo base_url() ?>collections/edit/<?php echo $post['slug'] ?>" class="btn btn-primary pull-left">
+				<i class="fas fa-edit"></i> Edit Movie
+			</a>
+			<?php echo form_open('/collections/delete/' . $post['id']) ?>
+			<button type="submit" class="btn btn-danger mt-4">
+				<i class="fas fa-trash"></i> Delete Movie
+			</button>
+			<?php echo form_close() ?>
+		<?php endif; ?>
 		<h4 class="mt-5">Comment Section</h4>
 		<?php if ($comments) : ?>
 			<ul class="list-group text-left">

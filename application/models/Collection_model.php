@@ -7,8 +7,11 @@ class Collection_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function get_posts($slug = false)
+	public function get_posts($slug = false, $limit = false, $offset = false)
 	{
+		if ($limit)
+			$this->db->limit($limit, $offset);
+
 		if (!$slug) {
 			$this->db->order_by('posts.id', 'DESC');
 			$this->db->join('genres', 'genres.id = posts.genre_id');
@@ -30,6 +33,7 @@ class Collection_model extends CI_Model
 			'title' => $this->input->post('title'),
 			'slug' => $slug,
 			'description' => $this->input->post('description'),
+			'user_id' => $this->session->userdata('user_id'),
 			'genre_id' => $this->input->post('genre_id'),
 			'image_slug' => $post_image,
 			'available_at' => $this->input->post('available_at'),

@@ -3,10 +3,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Collections extends CI_Controller
 {
-	public function index()
+	public function index($offset = 0)
 	{
+		$config['base_url'] = base_url() . 'collections/index';
+		$config['total_rows'] = $this->db->count_all('posts');
+		$config['per_page'] = 12;
+		$config['url_segment'] = 3;
+		$config['attributes'] = ['class' => 'pagination-link'];
+
+		// Init Pagination
+		$this->pagination->initialize($config);
 		$data['title'] = 'Movie Collections';
-		$data['posts'] = $this->collection_model->get_posts();
+		$data['posts'] = $this->collection_model->get_posts(false, $config['per_page'], $offset);
 
 		$this->load->view('templates/header');
 		$this->load->view('collections/index', $data);
@@ -57,7 +65,6 @@ class Collections extends CI_Controller
 			$this->load->library('upload', $config);
 
 			if (!$this->upload->do_upload()) {
-				die('puce...');
 				$errors = ['error' => $this->upload->display_errors()];
 				$post_image = 'no-image.png';
 			} else {
@@ -79,6 +86,9 @@ class Collections extends CI_Controller
 			redirect('users/login');
 
 		$data['post'] = $this->collection_model->get_posts($slug);
+
+		if ($this->session->userdata('user_id') !== $this->collection_model->get_posts($slug)['user_id'])
+			redirect('collections');
 		$data['genres'] = $this->collection_model->get_genres();
 
 		if (empty($data['post']))

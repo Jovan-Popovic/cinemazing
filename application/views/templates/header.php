@@ -55,7 +55,6 @@
 		'user_logged_in',
 		'movie_created',
 		'movie_updated',
-		'movie_deleted',
 		'genre_created',
 	];
 	$secondary_data = [
@@ -63,6 +62,8 @@
 		'email_exists',
 		'login_failed',
 		'user_logged_out',
+		'movie_deleted',
+		'genre_deleted',
 	];
 	?>
 	<?php foreach ($danger_data as $message) : ?>
